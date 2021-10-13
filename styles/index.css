@@ -1,5 +1,58 @@
+body{
+    background-color: rgb(242, 249, 255) !important;
+}
+
 .item{
-    
-    border: 1px solid black;
+    background-color: white;
+    /* border: 1px solid rgb(197, 204, 211); */
+    padding-top: 0 !important;
+    box-shadow: 10px 13px 14px -3px rgba(0,0,0,0.13);
     
 }
+
+.precio{
+    color:rgb(90, 90, 90);
+}
+
+.img-product{
+    padding: 1em;
+    max-height: 10em !important;
+    max-width: 10em !important;
+}
+
+.cajas-productos{
+    text-align: center !important;
+    
+}
+
+.btn-addCarrito{
+    width: 100%;
+    padding: 1em !important;
+    margin-top:2em !important;
+    border-radius: 0 !important;
+    border-top-color: rgb(161, 210, 255) !important;
+    color:rgb(161, 210, 255) !important;
+}
+
+.btn-addCarrito:hover{
+    background-color:rgb(161, 210, 255) !important;
+    color:white !important;
+}
+
+.btn-addCarrito:active{
+    background-color:rgb(131, 191, 247) !important;
+    color:white !important;
+}
+
+#carrito{
+    position:fixed;
+    transition: 0.5s;
+    z-index: 10;
+    top:0;
+    right:0;
+    height: 100vh;
+    width: 0;
+    background-color: black;
+    color:white;
+}
+
