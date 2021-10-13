@@ -7,24 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <title>Document</title>
 
     <script>
-        const addCarrito = (nombre,precio) => {
-            document.getElementById("carrito").innerHTML+=`
-                <p>${nombre}</p>
-                <p>${precio}</p>
+        let precioTotal=0;
+
+        const addCarrito = (nombre,precio,img) => {
+            document.getElementById("productos-carrito").innerHTML+=`
+                <div class="content-carrito">
+                    <img src="${img}" alt="" class="img-carrito">
+                    <p>${nombre}</p>
+                    <p id="precio-carrito">${precio} €</p>
+                </div>
+                <hr/>   
             `
+            calcularTotal(precio);
             showCarrito();
+
         }
 
         const closeCarrito = () => {
-            document.getElementById("carrito").style.width="0";
+            document.getElementById("carrito").style.right="-270px";
         }
 
         const showCarrito = () => {
-            document.getElementById("carrito").style.width="250px";
+            document.getElementById("carrito").style.right="0";
+            if(precioTotal > 0){
+                document.getElementById("container-btn-comprar").innerHTML=`
+                <button class="btn btn-outline-primary btn-comprar">Comprar</button>
+                `;
+            }
+            else{
+                document.getElementById("container-btn-comprar").innerHTML=`
+                    <p>Tu cesta está vacía</p>
+                `;
+            }
+        }
+
+        const calcularTotal = (precio) =>{
+            precioTotal+=parseFloat(precio);;
+            document.getElementById("mostrar-precio").innerHTML=`${precioTotal} €`
         }
     </script>
 
@@ -50,7 +74,7 @@
                                <h6 class="precio"><?php echo $product[3]." €"?></h6>
                             </div>
                             <div>
-                                <button onclick="addCarrito('<?php echo $product[1]?>', '<?php echo $product[3]?>')" class="btn-addCarrito btn">Añadir al carrito</button>
+                                <button onclick="addCarrito('<?php echo $product[1]?>', '<?php echo $product[3]?>', '<?php echo $product[2]?>')" class="btn-addCarrito btn">Añadir al carrito</button>
                             </div>
                         </div>
                     </div>
@@ -63,7 +87,15 @@
         <button onclick="showCarrito()">Open</button>
     </div>
     <div id="carrito">
-        <button onclick="closeCarrito()">X</button>
+        <i class="bi bi-x-circle close-icon" onclick="closeCarrito()"></i>
+        <br/>
+        <hr />  
+        <div id="productos-carrito"> </div>
+
+        <div class="precio-total">Total <span id="mostrar-precio" style="float: right;">0 €</span></div>
+        <div style="text-align: center" id="container-btn-comprar">
+        </div>
+
     </div>
             
 

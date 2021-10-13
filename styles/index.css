@@ -45,14 +45,74 @@ body{
 }
 
 #carrito{
+    padding-top:0.5em;
     position:fixed;
     transition: 0.5s;
     z-index: 10;
     top:0;
-    right:0;
+    right:-270px;
     height: 100vh;
-    width: 0;
-    background-color: black;
-    color:white;
+    width: 270px;
+    background-color: white;
+    color:black;
+    box-shadow: -5px -3px 19px -10px rgba(0,0,0,0.5);
 }
 
+.content-carrito{
+    padding:15px;
+    margin-top:0;
+    
+}
+
+.content-carrito p{
+    display: inline !important;
+    
+}
+
+hr{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.content-carrito:hover{
+    background-color: rgb(161, 210, 255);
+}
+
+#precio-carrito{
+    float: right !important;
+
+}
+
+.img-carrito{
+    max-height: 2em !important;
+    max-width: 2em !important;
+}
+
+.precio-total{
+    padding: 1.5em;
+}
+
+.btn-comprar{
+    color: rgb(161, 210, 255) !important;
+    border-color:rgb(161, 210, 255) !important;
+}
+
+.btn-comprar:hover{
+    background-color: rgb(161, 210, 255) !important;
+    color:white !important;
+
+}
+
+.close-icon{
+    margin: 0.5em;
+    font-size:20px;
+    color:rgb(129, 136, 145);
+}
+
+.close-icon:hover{
+    color:cornflowerblue;
+}
+
+#carrito>hr{
+    margin-top: 0.5em !important;
+}
