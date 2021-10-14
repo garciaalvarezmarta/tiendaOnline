@@ -60,7 +60,25 @@
 
         $products = $result->fetch_all();
     ?>
-
+    <div class="nav">
+        <ul class="nav-container">
+            <li  class="nav-elements">
+                <a href="">Inicio</a>
+            </li>
+            <li  class="nav-elements">
+                <a href="">Maquillaje</a>
+            </li>
+            <li  class="nav-elements">
+                <a href="">Accesorios de maquillaje</a>
+            </li>
+            <li  class="nav-elements">
+                <a href="">Cosmética</a>
+            </li>
+            <li  class="nav-elements" id="carrito-icon"  onclick="showCarrito()">
+                <i class="bi bi-cart"></i>
+            </li>
+        </ul>  
+    </div>
     <div class="container">
         <div class="row">
             <?php
@@ -83,9 +101,7 @@
             
         </div>
     </div>
-    <div>
-        <button onclick="showCarrito()">Open</button>
-    </div>
+
     <div id="carrito">
         <i class="bi bi-x-circle close-icon" onclick="closeCarrito()"></i>
         <br/>
