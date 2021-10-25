@@ -2,18 +2,20 @@ body {
   background-color: rgb(242, 249, 255) !important;
 }
 
-.nav {
+.nav { 
+  position: fixed;
   text-align: center;
   padding-left: 3em !important;
   background-color: rgb(131, 191, 247) !important;
   box-shadow: 0px 10px 24px -10px rgba(0, 0, 0, 0.54);
+  z-index:10 !important;
+  width: 100%;
 }
 
 .nav-container {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  padding-left: 40em;
 }
 
 .nav-elements {
@@ -29,12 +31,35 @@ body {
   color: white;
 }
 
+.bi-justify{
+  color: white;
+}
+
 #carrito-icon {
   height: 100;
   color: white;
-  margin-left: 40em;
-  padding-top: 20px !important;
-  padding-bottom: 23px !important;
+  padding: 20px 10px 23px 10px;
+  margin-right: 2em ;
+}
+
+.carousel{
+  z-index: 0;
+  position: relative;
+  top: 67px;
+  /* margin-bottom: 170px; */
+}
+
+.container{
+  padding-bottom: 75px !important;
+}
+
+#maquillaje, #accesorios, #cosmetica{
+  padding-top: 175px;
+}
+
+#carrito-icon:hover{
+  color: white;
+  background-color: rgb(95, 178, 255);
 }
 
 .nav-elements:hover,
@@ -151,3 +176,4 @@ hr {
 #carrito > hr {
   margin-top: 0.5em !important;
 }
+

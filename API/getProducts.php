@@ -4,6 +4,4 @@
     $sql= "SELECT * from productos";
     $result = mysqli_query($con, $sql);
 
-
-
 ?>
